@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{book.title}}{% endblock %}
+
+{% block content %} 
+    
+<h2><em>{{book.title}}</em></h2>
+<h3>by <em>{{book.author_name}}</em></h3>
+
+<img src="{{book.image}}" width="300">
+
+<h4>{{book.description}}</h4>
+
+<form action="{% url 'books:book_detail' book.pk %}" method="POST">
+
+    {% csrf_token %}
+
+    <button type="submit">Delete Book</button>
+</form>
+
+{% endblock %}

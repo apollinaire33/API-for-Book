@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Add your new Book{% endblock %}
+
+{% block content %} 
+    
+<h2><em>Add your new Book!</em></h2>
+
+<form action="{% url 'books:book_add'  %}" method="POST">
+
+    {% csrf_token %}
+
+    <input type="text" required placeholder="Book Title" name="title"r><br><br>
+    <input type="text" required placeholder="Book Author" name="author"><br><br>
+    <textarea name="description" required="" placeholder="Book Description" cols="30" rows="10"></textarea><br><br>
+    <input type="text" required placeholder="Book Preview" name="image"><br><br>
+    <button type="submit">Add</button>
+</form>
+
+{% endblock %}
+

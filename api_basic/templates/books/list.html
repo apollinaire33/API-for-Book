@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Books{% endblock %}
+
+{% block content %} 
+    
+    {% if books %}
+
+        {% for a in books  %}
+            <br><a href="{% url 'books:book_detail' a.id %}" target="_blank">{{a.title}}</a></br>
+            <img src={{a.image}} width="100">
+        {% endfor %}
+
+    {% else %}
+        No Books
+    {% endif %}   
+
+<p>
+    <a href="{% url 'books:book_add' %}" target="_blank">Add new Book</a>
+</p>
+
+{% endblock %}

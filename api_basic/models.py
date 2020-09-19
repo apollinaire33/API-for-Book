@@ -7,6 +7,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     author_name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
+    image = models.URLField(max_length=200, blank=True)
     
 
 
